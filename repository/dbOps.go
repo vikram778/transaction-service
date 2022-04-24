@@ -6,6 +6,6 @@ type dBOps struct {
 	db *sqlx.DB
 }
 
-func NewDBOpsRepository(db *sqlx.DB) *dBOps {
-	return &dBOps{db: db}
+func NewDBOpsRepository(db *sqlx.DB) dBOps {
+	return dBOps{db: db}
 }

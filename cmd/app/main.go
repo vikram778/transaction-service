@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flamingo-authService/auth/repository"
 	"fmt"
 	"go.uber.org/zap"
 	"net/http"
@@ -9,6 +8,7 @@ import (
 	"transaction-service/config"
 	"transaction-service/pkg/log"
 	"transaction-service/pkg/postgres"
+	"transaction-service/repository"
 	"transaction-service/server"
 )
 
@@ -32,7 +32,7 @@ func main() {
 	log.Info(fmt.Sprintf("PostgreSQL connected: %#v", psqlDB.Stats()))
 
 	s := repository.NewDBOpsRepository(psqlDB)
-	h := server.NewServer(cfg, *s)
+	h := server.NewServer(cfg, &s)
 
 	log.Fatal("Starting Service Error", zap.Error(http.ListenAndServe(":3000", h.Run())))
 }

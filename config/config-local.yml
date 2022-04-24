@@ -9,7 +9,7 @@ postgres:
   PostgresqlUser: postgres
   PostgresqlPassword: postgres
   PostgresqlDbname: txn_db
-  PostgresqlSslmode: false
+  PostgresqlSslmode: disable
   PgDriver: pgx
 
 
