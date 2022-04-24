@@ -21,8 +21,9 @@ transactions (purchase , withdrwal , credit voucher)
 #Application startup and set up
 
 1. To run and build auth service :
-   go run cmd/app/main.go or execute run.sh script (sh run.sh)
-   go build ./cmd/app
+
+   -go run cmd/app/main.go  or execute run.sh script (sh run.sh)
+   -go build ./cmd/app (to build go binary)
 
    
 #Prerequisites
